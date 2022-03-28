@@ -6,16 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="zaitsev, cv, resume">
     <meta name="description" content="Это сайт - резюмэ Зайцева Владимира">
+    <link rel="stylesheet" href="style.css">
     <title>Здарова бурнабеды</title>
 </head>
 <body>
-    <img src="ava.png" alt="Тут могла быть моя аватарка" width="250">
+    <div class="container">
+    <div>
+        <div class="ava">
+    <img src="ava.png" alt="Тут могла быть моя аватарка" class="avatar">
+        </div>
+    <div class="info-text">
     <h1>Владимир Зайцев</h1>
+    <div class="info bg-white">
     <p>Начинающий кодэр aka <strong>Фортнайтер</strong><em> всея <strong>Руси</strong></em></p>
     <p>
         <strong>Я</strong> люблю смотреть <em>интересные</em> видео на <strong>Youtube</strong>, смотреть <strong>анимэ</strong> и иногда "играть" в <strong>Fortnite</strong>.
     </p>
-    <h1>Опыт работы</h1>
+    <div>
+    <h3>Список социальных сетей:</h3>
+    <a href="https://vk.com/kote_v_zakone" target="blank" class="abtn">Vkontakte</a>
+    |
+    <a href="https://t.me/LeatherCowboy1337" target="blank" class="abtn">Telegram</a>
+    |
+    <a href="https://www.youtube.com/channel/UCaVIMvRac0Gb7hjza1nmbxQ" target="blank" class="abtn">Youtube</a>
+</div>
+</div>
+</div>
+    <div class="card">
+    <h2>Опыт работы</h2>
     <table width="400">
         <thead>
         <tr>
@@ -43,6 +61,8 @@
 
     </tbody>
     </table>
+    </div>
+    <div class="hob">
     <h2>Мои хобби</h2>
     <ol>
         <li>Кодинг</li>
@@ -51,12 +71,7 @@
         <li>Друзья</li>
         <li>Anime</li>
     </ol>
-    <h3>Список социальных сетей:</h3>
-    <a href="https://vk.com/kote_v_zakone" target="blank">Vkontakte</a>
-    |
-    <a href="https://t.me/LeatherCowboy1337" target="blank">Telegram</a>
-    |
-    <a href="https://www.youtube.com/channel/UCaVIMvRac0Gb7hjza1nmbxQ" target="blank">Youtube</a>
+    </div>  
     <h3>Связаться со мной</h3>
     <form>
         <div>
@@ -70,12 +85,13 @@
         <div>
             <label for="message">Ваше сообщение:</label>
             <br>
-            <textarea id="message" cols="31" rows="5" placeholder="Введите сообщение..."></textarea>
+            <textarea id="message" cols="32" rows="5" placeholder="Введите сообщение..."></textarea>
         </div>
         <div>
-            <button type="submit">Отправить!</button>
+            <button type="submit" class="btn">Отправить!</button>
         </div>
     </form>
+</div>
 <br>
 <br>
 <br>
