@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Ramaraja&family=Roboto&family=Smokum&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    background: #9bd5fa;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.avatar {
+    
+    width: 250px;
+    height: 384px;
+    border-radius: 25px;
+}
+
+.info-text {
+    margin-bottom: 20px;
+}
+
+.info-text p {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    color: #3f3f3f;
+    margin: 0;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.info {
+    border-radius: 20px;
+    padding: 15px 20px;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.card {
+    border-radius: 20px;
+    background: rgb(0, 66, 247);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    color: azure;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.hob {
+    border-radius: 20px;
+    background: rgb(255, 58, 58);
+    padding: 15px 20px;
+    padding-bottom: 1px;
+    color: rgb(248, 248, 248);
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.hob h2 {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.abtn {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+a:hover {
+    color: orange;
+    font-size: 1.2rem;
+}
+
+a:active {
+    color: blue;
+}
+
+a:visited {
+    color: #ac12db;
+}
+
+.btn {
+    background: #111;
+    padding: 15px 20px;
+    color: white;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
