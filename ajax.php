@@ -4,48 +4,36 @@ $tg_bot_token = "5323037861:AAFvjISIXo6WhjYdGDebRzkec4kl88aKO30";
 // ID Чата
 $chat_id = "-702908816";
 
-$text = '';
+//Определяем переменные для передачи данных из нашей формы
+if ($_POST['act'] == 'order') {
+    $name = ($_POST['name']);
+    $email = ($_POST['email']);
+    $text = ($_POST['text']);
 
-foreach ($_POST as $key => $val) {
-    $text .= $key . ": " . $val . "\n";
+//Собираем в массив то, что будет передаваться боту
+    $arr = array(
+        'Имя:' => $name,
+        'Почта:' => $email,
+        'Сообщение' => $text
+    );
+
+//Настраиваем внешний вид сообщения в телеграме
+    foreach($arr as $key => $value) {
+        $txt .= "<b>".$key."</b> ".$value."%0A";
+    };
+
+//Передаем данные боту
+    $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+
+//Выводим сообщение об успешной отправке
+    if ($sendToTelegram) {
+        alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+    }
+
+//А здесь сообщение об ошибке при отправке
+    else {
+        alert('Что-то пошло не так. ПОпробуйте отправить форму ещё раз.');
+    }
 }
 
-$text .= "\n" . $_SERVER['REMOTE_ADDR'];
-$text .= "\n" . date('d.m.y H:i:s');
-
-$param = [
-    "chat_id" => $chat_id,
-    "text" => $text
-];
-
-$url = "https://api.telegram.org/bot" . $tg_bot_token . "/sendMessage?" . http_build_query($param);
-
-var_dump($text);
-
-file_get_contents($url);
-
-foreach ( $_FILES as $file ) {
-
-    $url = "https://api.telegram.org/bot" . $tg_bot_token . "/sendDocument";
-
-    move_uploaded_file($file['tmp_name'], $file['name']);
-
-    $document = new \CURLFile($file['name']);
-
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, ["chat_id" => $chat_id, "document" => $document]);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type:multipart/form-data"]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-
-    $out = curl_exec($ch);
-
-    curl_close($ch);
-
-    unlink($file['name']);
-}
-
-die('1');
+?>
